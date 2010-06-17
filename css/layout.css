@@ -1,0 +1,431 @@
+@import "base.css";
+
+@-webkit-keyframes highlight {
+	0% { color: #999; }
+	50% { color: #fff; }
+	100% { color: #999; }
+}
+
+/*	@group Typography, Fuck Yeah! */
+
+body, a, a:visited, a:active, a:hover {
+	color: #ddd;
+}
+
+.game {
+	font-size: 1.3em;
+}
+
+h1, p {
+	margin: 0 0 20px;
+}
+
+h1, .win {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 48px;
+	font-weight: bold;
+	
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 48px;
+}
+
+h1 a {
+	text-decoration: none;
+}
+
+p {
+	font-family: Georgia, Times, "Times New Roman", serif;
+	font-size: 15px;
+	line-height: 24px;
+	margin: 0 0 24px;
+}
+
+abbr {
+	border-bottom: 1px dotted #aaa;
+}
+
+.information p a {
+	color: #ff6;
+}
+
+.information p a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.credits,
+.promotion {
+	font-size: 13px;
+}
+
+footer {
+	padding: 5px 30px;
+	opacity: 0.75;
+	color: #ccc;
+}
+
+	footer p {
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 11px;
+	}
+	
+	footer a:hover {
+		text-decoration: none;
+		color: #fff;
+	}
+
+/*	@end */
+
+body {
+	background: #333 url(../img/body.png) repeat 50% 50%;
+	
+}
+
+.game {
+	
+	margin: 15px 0 0;
+	padding: 0 0 20px;
+	
+	background: #666 url(../img/body_lighter.png) repeat 50% 50%;
+	border-top: 1px solid rgba(255,255,255,0.15);
+	border-bottom: 1px solid rgba(255,255,255,0.10);
+	
+	box-shadow: rgba(0,0,0,0.5) 0 1px 0;
+	-webkit-box-shadow: rgba(0,0,0,0.5) 0 1px 0;
+	-moz-box-shadow: rgba(0,0,0,0.5) 0 1px 0;
+	
+}
+
+.information {
+	padding: 40px 20px 20px;
+	z-index: 20;
+}
+
+.gameboard {
+	width: 600px;
+	height: 600px;
+	
+	margin: 0 auto 20px;
+}
+
+.gameboard {
+	position: relative;
+}
+
+	.gameboard-reset {
+		right: -600px;
+	}
+	
+	.gameboard ul {
+		width: 600px;
+		height: 600px;
+		
+		-webkit-transition-property: all;
+		-webkit-transition-duration: 0.5s;
+		
+		padding: 20px 0 0 20px;
+		
+		background: #666;
+		
+		border-radius: 20px;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		
+		border: 1px solid rgba(255,255,255,0.2);
+		
+		box-shadow: rgba(0,0,0,0.6) 0 0 2px;
+		-webkit-box-shadow: rgba(0,0,0,0.6) 0 0 2px;
+		-moz-box-shadow: rgba(0,0,0,0.6) 0 0 2px;
+	}
+	
+
+/* 	Browsers smaller than 960 pixels wide
+	iPad Portrait Mode
+*/
+
+@media screen and (max-width: 960px) {
+
+	.information {
+		position: relative;
+		margin: 0 auto;
+		
+		overflow: auto;
+	}
+
+	h1,
+	.information {
+		width: 560px;
+		text-align: left;
+	}
+	
+	.information p {
+		float: left;
+		display: inline;
+		
+		width: 260px;
+		margin-right: 40px;
+	}
+	
+	.promote,
+	.credits {
+		width: 160px;
+		margin-right: 0 !important;
+	}
+	
+	.gameboard .win {
+		margin-top: -10px;
+	}
+}
+
+/* 	Browsers bigger than 960px wide _AND_ (i)Phones
+*/
+
+@media screen and (min-width: 960px), screen and (max-width: 480px) {
+	h1 {
+		width: auto;
+	}
+
+	.information {
+		width: 258px;
+		
+		margin: 0 auto;
+	}
+}
+
+/* 	Browsers bigger than 960px wide 
+	Watch the cascade!
+*/
+
+@media screen and (min-width: 960px) {
+	
+	.game {
+		position: relative;
+		top: 15px;
+		
+		min-height: 640px;
+		min-width: 960px;
+		
+		margin: 0;
+	}
+	
+	
+	.information {
+		position: absolute;
+		margin: 0 10px 20px;
+		
+		height: 600px;
+		
+		text-shadow: 0 -1px 0 rgba(0,0,0,0.9);
+	}
+	
+	.credits {
+		position: absolute;
+		bottom: 20px;
+	}
+	
+	.gameboard {
+		
+		padding: 20px 0 0 260px;
+		
+	}
+
+}
+
+/* 	(i)Phone 
+*/
+
+@media screen and (max-width: 480px) {
+
+	body,
+	.game {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	
+	.game {
+		overflow: hidden;
+	}
+
+	.gameboard {
+		width: 310px;
+		height: 310px;
+		margin: 0 auto 40px;
+		
+		overflow: visible;
+	}
+	
+	.gameboard ul {
+		margin: 0;
+	
+		-webkit-transform: scale(0.5);
+		-webkit-transform-origin: 0 0;
+		
+		-moz-transform: scale(0.5);
+		-moz-transform-origin: 0 0;
+	}
+	
+	img {
+		display: none !important;
+	}
+	
+	.gameboard .win {
+		margin-top: -20px;
+	}
+}
+
+
+
+/* @group Game Elements */
+
+
+.card {
+	position: relative;
+
+	width: 80px;
+	height: 80px;
+	
+	margin: 0 20px 20px 0;
+	
+	float: left;
+	display: inline;
+	
+	-webkit-perspective: 500;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 0.5s;
+}
+
+	.card span {
+		position: absolute;
+		top: 0;
+		left: 0;
+		
+		display: block;
+		
+		width: 80px;
+		height: 80px;
+		
+		-webkit-transition-property: transform;
+		-webkit-transition-duration: 0.3s;
+		-webkit-transition-timing-function: ease-out;
+		
+		-webkit-backface-visibility: hidden;
+		-webkit-transform-style: preserve-3d;
+		
+		border-radius: 12px;
+		-webkit-border-radius: 12px;
+		-moz-border-radius: 12px;
+		
+		box-shadow: #000 0 1px 2px;
+		-webkit-box-shadow: #000 0 1px 2px;
+		-moz-box-shadow: rgba(0,0,0,0.5) 0 1px 2px;
+	}
+	.card span {
+		-webkit-transform: rotateY(0deg);
+		
+		background: #fff url(../img/cards/cardback_01.png) no-repeat 50% 50%;
+		-webkit-background-size: 80px 80px;
+		
+		z-index: 900;
+	}
+	
+		.epic-win .card span {
+			background-image: url(../img/cards/cardback_win2.png);
+		}
+	
+	.card span.back {
+		-webkit-transform: rotateY(-180deg);
+		
+		background: #fff url(../img/cards/card01.png) no-repeat 50% 50%;
+		
+		z-index: 800;
+	}
+
+	.card-selected span {
+		-webkit-transform: rotateY(180deg);
+		
+		height: 98px;
+		width: 98px;
+		
+		top: -9px;
+		left: -9px;
+		
+		-webkit-background-size: 98px 98px;
+		
+		border-radius: 14px;
+		-webkit-border-radius: 14px;
+		
+		box-shadow: #333 0 2px 4px;
+		-webkit-box-shadow: #333 0 2px 4px;
+	}
+	
+	.card-selected span.back {
+		-webkit-transform: rotateY(0deg);
+		
+		z-index: 1000;
+	}
+	
+	.card-alt span {
+		-webkit-transform: rotateX(0deg);
+	}
+	
+	.card-alt span.back {
+		-webkit-transform: rotateX(-180deg);
+	}
+	
+	.card-alt.card-selected span {
+		-webkit-transform: rotateX(180deg);
+	}
+	
+	.card-alt.card-selected span.back {
+		-webkit-transform: rotateX(0);
+	}
+	
+	.card-1 span.back { 	background-image: url(../img/cards/card01.png); }
+	.card-2 span.back { 	background-image: url(../img/cards/card02.png); }
+	.card-3 span.back { 	background-image: url(../img/cards/card03.png); }
+	.card-4 span.back { 	background-image: url(../img/cards/card04.png); }
+	.card-5 span.back { 	background-image: url(../img/cards/card05.png); }
+	.card-6 span.back { 	background-image: url(../img/cards/card06.png); }
+	.card-7 span.back { 	background-image: url(../img/cards/card07.png); }
+	.card-8 span.back { 	background-image: url(../img/cards/card08.png); }
+	.card-9 span.back { 	background-image: url(../img/cards/card09.png); }
+	.card-10 span.back { 	background-image: url(../img/cards/card10.png); }
+	.card-11 span.back { 	background-image: url(../img/cards/card11.png); }
+	.card-12 span.back { 	background-image: url(../img/cards/card12.png); }
+	
+	.gameboard-alt1 ul {
+		-webkit-transform: rotate(90deg);
+	}
+	
+		.gameboard-alt1 ul .card {
+			-webkit-transform: rotate(-90deg);
+		}
+	
+	.gameboard-alt2 ul {
+		-webkit-transform: rotate(-90deg);
+	}
+		
+		.gameboard-alt2 ul .card {
+			-webkit-transform: rotate(90deg);
+		}
+		
+	.gameboard .win {
+		width: 300px;
+		height: 40px;
+		
+		position: absolute;
+		top: 50%;
+		right: 0;
+		
+		display: none;
+		
+		-webkit-animation-name: highlight;
+		-webkit-animation-duration: 0.5s;
+		-webkit-animation-iteration-count: infinite;
+		
+		text-shadow: rgba(0,0,0,0.5) 0 -1px 0;
+		-webkit-text-shadow: rgba(0,0,0,0.5) 0 -1px 0;
+	}
+
+/* @end */

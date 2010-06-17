@@ -1,0 +1,218 @@
+/*
+	-------------
+	CSS Base File
+	-------------
+	Contains many resets, browser fixes and defaults to make life a bit easier.
+	Inspired by the likes of Eric Meyer et al.
+	
+	
+	Version:	1.5 (a.k.a. Red II)
+	Created:	May 27th, 2010
+	Author:		Maykel Loomans - www.maykelloomans.com
+	
+	
+	Changes:	
+	 Since 1.0	Font-shorthand for basic fonts.
+	 Since 1.1	Added input[type=image], input.image
+	 Since 1.2	Added input[type=radio], input.radio
+	 Since 1.3  Added ::moz-focus-inner to the input[type=submit], input.submit
+	 Since 1.4  Added display: block; HTML5 elements: article, section, header, footer, nav
+	 Since 1.5	Removed accessibility selectors, added -moz-focus-inner.
+
+	-------------
+*/
+
+
+/* @group - Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, section, header, footer, nav {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	font-size: 100%;
+
+	vertical-align: baseline;
+	text-decoration: none;
+}
+
+/* @end */
+
+
+
+/* @group - Defaults */
+
+:focus { outline: 0; } /* Remember to define focus styles! */
+
+html, body { height: 100%; }
+body { background: #fff; } /* Putting on pants. */
+a img, fieldset { border: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; } /* Remove possible quote marks (") from <q>, <blockquote>. */
+	
+	/* @group - HTML5 Elements */
+	
+	article, section, header, footer, nav {
+		display: block;
+	}
+	
+	/* @end */
+
+	/* @group - Input Fields */
+	
+	input[type=submit], input.submit { 
+		font-weight:bold; 
+		width: auto !important;
+	}
+	
+	input[type=submit]::-moz-focus-inner, input.submit::-moz-focus-inner,
+	input[type=reset]::-moz-focus-inner, input.reset::-moz-focus-inner { border: 0; }
+	
+	input[type=image], input.image,
+	input[type=radio], input.radio,
+	input[type=checkbox], input.checkbox {
+		background:none !important;
+		border:none !important;
+		height:auto !important;
+		width:auto !important;
+	}
+	
+	/* @end */
+
+	/* @group Image Defaults */
+	
+	h1 img, h2 img, h3 img, h4 img, h5 img, h6 img { margin: 0; }
+	
+	img.left {
+		margin: 4px 20px 4px 4px;
+		
+		display:inline;
+		float:left !important;
+	}
+	
+	img.right {
+		margin: 4px 4px 4px 20px;
+		
+		display:inline;
+		float:right !important;
+	}
+	
+	/* @end */
+
+ul, ol { list-style: none; } /* Lists are flexible, define list styles for your site specifically. */
+	
+table { border-collapse: separate; border-spacing: 0; } /* Tables still need 'cellspacing="0"' in the markup. */
+caption, th, td { text-align: left; font-weight: normal; }
+table, td, th { vertical-align: middle; }
+
+/* @end */
+
+
+
+/* @group - Defaults (Typo) */
+
+	/* @group Default Font */
+	
+	body { font: 62.5%/20px Arial, Helvetica, sans-serif; color: #000; } /* Resetting the body font for no current reason whatsoever. Let's put it towards 'peace of mind' */
+	input, textarea, button, select { font: 100% Arial, Helvetica, sans-serif; }
+	pre,code,tt { font-family: 'andale mono', 'lucida console', monospace;}
+	
+	/* @end */ 
+
+a			   		{ color: #009; text-decoration: underline; }
+a:visited			{ color: #006; }
+a:focus, a:hover	{ color: #000; }
+
+del { text-decoration: line-through; }
+pre,code    { white-space: pre; }
+sup, sub	{ line-height: 0; }
+
+strong { font-weight: bold; }
+
+/* @end */
+
+
+
+/* @group - Browser Specifics */
+
+input::-moz-focus-inner, 
+button::-moz-focus-inner { 
+	border: 0;
+	padding: 0;
+}
+
+/* @end */
+
+
+
+/* @group - Clearing Hacks */
+
+.clear:after {
+	clear:both;
+	content:".";
+	display:block;
+	height:0;
+	visibility:hidden;
+	font-size: 0.01em !important;
+	line-height: 0.01em !important;
+}
+
+.clear { display: inline-block; }
+* html .clear { height:1%; }
+.clear { display:block; }
+
+/* @end */
+
+
+/* @group Custom Stuff */
+
+	/* @group Horizontal Rules */
+	
+	.hr {
+		border-bottom:1px solid #ffeae0;
+		clear:both !important;
+		font-size:0.01em !important;
+		height:1px !important;
+		width:100%;
+		margin:3px 0 !important;
+		padding:1px 0;
+	}
+	
+	.hr hr { display: none !important; }
+	
+	/* @end */
+	
+	
+	
+	/* @group Visibility Switches */
+	
+	.hide { display: none !important; }
+	.show { display: block !important; }
+	
+	.invisible { visibility: hidden !important; }
+	.visible { visibility: visible !important; }
+	
+	/* @end */
+	
+	
+	
+	/* @group Font-Size Deviations */
+	
+	.mute 		{ font-size: 0.8em !important; }
+	.whisper 	{ font-size: 0.9em !important; }
+	.loud  		{ font-size: 1.1em !important; }
+	.shout 		{ font-size: 1.2em !important; }
+	
+	/* @end */
+
+	
+/* @end */
